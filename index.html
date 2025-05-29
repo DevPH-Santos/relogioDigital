@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="horario">
+
+            <h1 id="hora_atual"></h1>
+
+        </div>
+
+        <div class="dia">
+
+            <p id="dia_atual"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function atualizarDataHora() {
+            const agora = new Date()
+
+            const horas = String(agora.getHours()).padStart(2, '0')//se as horas forem sem valor vai mostrar 2 zeros na esquerda
+            const minutos = String(agora.getMinutes()).padStart(2, '0')
+            const segundos = String(agora.getSeconds()).padStart(2, '0')
+            const horaString = `${horas}:${minutos}:${segundos}`//definindo a variavel como ela vai aparecer ao usuario
+
+            const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+            const diaDaSemana = diasDaSemana[agora.getDay()]//aqui pega o dia da semana dentro da variavel de diasDaSemana
+            const diaDoMes = agora.getDate()//aqui pega so o valor mesmo
+            const mes = meses[agora.getMonth()]//pega o mes dentro do vetor
+            const dataString = `${diaDaSemana}, ${diaDoMes} de ${mes}`//definiu como vai aparecer pro usuario
+
+            hora_atual.textContent = horaString
+            dia_atual.textContent = dataString
+        }
+        
+        atualizarDataHora()
+        setInterval(atualizarDataHora, 1000)
+
+    </script>
+
+</body>
+
+</html>
