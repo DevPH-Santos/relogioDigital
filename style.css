@@ -43,7 +43,9 @@ body{
     color: var(--cor-contraste);
 }
 
-.container h1{
+.container h1 {
+    background-color: transparent;
+    text-shadow: 0 0 20px var(--cor-contraste);
     font-size: 70px;
 }
 
