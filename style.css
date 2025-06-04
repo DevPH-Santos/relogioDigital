@@ -35,6 +35,7 @@ body{
     background-color: var(--branco);
     display: flex;
     gap: 20px;
+    width: 445px;
     align-items: center;
     justify-content: center;
     font-weight: bolder;
